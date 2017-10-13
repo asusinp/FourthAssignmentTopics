@@ -4,18 +4,21 @@
 package org.escoladeltreball.fourthassignmenttopics;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 /**
  * @author iaw21752927
  *
  */
-public class ITV  implements Comparable<ITV>{
+public class ITV  implements Comparable<ITV> {
 
+	//Comparable, orden natural
+	//Comparator, qualsevol ordre, ordenat per el camp indicat
+	
 	private long id;
 	private String matricula;
-	private LocalDate fecha;
-	private LocalTime hora;
+	private LocalDateTime fecha;
 	private String lugar;
 	
 	/**
@@ -25,12 +28,11 @@ public class ITV  implements Comparable<ITV>{
 	 * @param hora
 	 * @param lugar
 	 */
-	public ITV(long id, String matricula, LocalDate fecha, LocalTime hora, String lugar) {
+	public ITV(long id, String matricula, LocalDateTime fecha, String lugar) {
 		super();
 		this.id = id;
 		this.matricula = matricula;
 		this.fecha = fecha;
-		this.hora = hora;
 		this.lugar = lugar;
 	}
 
@@ -65,30 +67,17 @@ public class ITV  implements Comparable<ITV>{
 	/**
 	 * @return the fecha
 	 */
-	public LocalDate getFecha() {
+	public LocalDateTime getFecha() {
 		return fecha;
 	}
 
 	/**
 	 * @param fecha the fecha to set
 	 */
-	public void setFecha(LocalDate fecha) {
+	public void setFecha(LocalDateTime fecha) {
 		this.fecha = fecha;
 	}
 
-	/**
-	 * @return the hora
-	 */
-	public LocalTime getHora() {
-		return hora;
-	}
-
-	/**
-	 * @param hora the hora to set
-	 */
-	public void setHora(LocalTime hora) {
-		this.hora = hora;
-	}
 
 	/**
 	 * @return the lugar
@@ -138,13 +127,6 @@ public class ITV  implements Comparable<ITV>{
 		} else if (!fecha.equals(other.fecha)) {
 			return false;
 		}
-		if (hora == null) {
-			if (other.hora != null) {
-				return false;
-			}
-		} else if (!hora.equals(other.hora)) {
-			return false;
-		}
 		if (id != other.id) {
 			return false;
 		}
@@ -180,8 +162,14 @@ public class ITV  implements Comparable<ITV>{
 	 */
 	@Override
 	public String toString() {
-		return String.format("ITV [id=%s, matricula=%s, fecha=%s, hora=%s, lugar=%s]", id, matricula, fecha, hora,
-				lugar);
+		return String.format("ITV [id=%s, matricula=%s, fecha=%s, lugar=%s]", id, matricula, fecha, lugar);
+	}
+	
+	
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
 	}
 
 

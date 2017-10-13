@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -28,12 +29,12 @@ public abstract class ITVManager implements Manager {
 	}
 	
 	private void setup(String itvFile) throws Exception {
-		List<String> records = Files.readAllLines(Paths.get("itvFile"));
+		List<String> records = Files.readAllLines(Paths.get(itvFile));
 		List<ITV> itvs = new ArrayList<>();
 		for (String record : records) {
 			String[] fields = record.split(",");
 			long id = Long.parseLong(fields[0]);
-			ITV itv = new ITV(id, fields[1], LocalDate.parse(fields[2], DateTimeFormatter.ofPattern("dd/MM/yyyy")), LocalTime.parse(fields[3]), fields[4]);
+			ITV itv = new ITV(id, fields[1], LocalDateTime.parse(fields[2], DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")), fields[3]);
 			itvs.add(itv);
 		}
 	}

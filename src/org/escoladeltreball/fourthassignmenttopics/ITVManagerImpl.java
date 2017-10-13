@@ -3,6 +3,8 @@
  */
 package org.escoladeltreball.fourthassignmenttopics;
 
+import java.time.LocalDateTime;
+
 /**
  * @author iaw21752927
  *
@@ -24,6 +26,8 @@ public class ITVManagerImpl extends ITVManager {
 	@Override
 	public ITV getNext() throws Exception {
 		//LocalTime, LocalDate, LocalDateTime
+		LocalDateTime now = LocalDateTime.now();
+		now.
 		return null;
 	}
 
