@@ -101,50 +101,7 @@ public class ITV  implements Comparable<ITV> {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + (int) (id ^ (id >>> 32));
-
 		return result;
-	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (obj == null) {
-			return false;
-		}
-		if (!(obj instanceof ITV)) {
-			return false;
-		}
-		ITV other = (ITV) obj;
-		if (fecha == null) {
-			if (other.fecha != null) {
-				return false;
-			}
-		} else if (!fecha.equals(other.fecha)) {
-			return false;
-		}
-		if (id != other.id) {
-			return false;
-		}
-		if (lugar == null) {
-			if (other.lugar != null) {
-				return false;
-			}
-		} else if (!lugar.equals(other.lugar)) {
-			return false;
-		}
-		if (matricula == null) {
-			if (other.matricula != null) {
-				return false;
-			}
-		} else if (!matricula.equals(other.matricula)) {
-			return false;
-		}
-		return true;
 	}
 
 	/**
@@ -170,6 +127,27 @@ public class ITV  implements Comparable<ITV> {
 	protected Object clone() throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
 		return super.clone();
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof ITV)) {
+			return false;
+		}
+		ITV other = (ITV) obj;
+		if (id != other.id) {
+			return false;
+		}
+		return true;
 	}
 
 

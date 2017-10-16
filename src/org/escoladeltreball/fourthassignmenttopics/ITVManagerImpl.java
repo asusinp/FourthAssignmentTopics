@@ -71,4 +71,8 @@ public class ITVManagerImpl extends ITVManager {
 		return itvsInRange;
 	}
 	
+	//functional interfaces: tenen un únic metode abstracte
+	//exemple: Comparator<T> (solo el metodo compare())
+	//poden tenir default and static methods
+	
 }
