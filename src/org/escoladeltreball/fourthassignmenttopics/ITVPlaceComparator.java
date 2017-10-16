@@ -9,14 +9,14 @@ import java.util.Comparator;
  * @author iaw21752927
  *
  */
-public class ITVPlateComparator implements Comparator<ITV> {
+public class ITVPlaceComparator implements Comparator<ITV> {
 
 	/* (non-Javadoc)
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
 	@Override
 	public int compare(ITV itv1, ITV itv2) {
-		return itv1.getMatricula().compareTo(itv2.getMatricula());
+		return itv1.getLugar().compareTo(itv2.getLugar());
 	}
 
 }
